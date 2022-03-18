@@ -6,7 +6,10 @@
   &__container {
     height: 88px;
     width: 100%;
-    border-bottom: 1px solid $color-2;
+    max-width: $maxWidthCont + 60px;
+    margin: 0 auto;
+    padding: 0 29px;
+    box-sizing: border-box;
   }
 
   &__menu {
@@ -16,6 +19,17 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+  }
+
+  &:before {
+    content: '';
+    display: block;
+    position: relative;
+    left: 0;
+    top: 88px;
+    height: 1px;
+    max-width: $maxWidthCont;
+    border-bottom:1px solid rgb(0, 0, 0);
   }
 }
 

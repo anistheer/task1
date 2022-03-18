@@ -8,10 +8,6 @@
 @import './skills.scss';
 @import './portfolio.scss';
 
-[class*='__container'] {
-  max-width: $maxWidthCont;
-}
-
 html * {
   font-family: 'Gilroy';
   font-weight: 500;
@@ -21,9 +17,6 @@ html * {
 
 body {
   min-width: $minWidth;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
 ul {
