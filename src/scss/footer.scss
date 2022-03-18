@@ -9,6 +9,7 @@
   &__send-button {
     height: 42px;
     width: 180.5px;
+    font-size: 18px;
     border-radius: 21px;
     border: 0px;
     background-color: $color-1;
@@ -51,5 +52,7 @@
 
   &__media-icons-text {
     color: $color-2;
+    font-size: 14px;
+    line-height: 17px;
   }
 } 
