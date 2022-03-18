@@ -42,6 +42,7 @@
   }
 
   &__lang {
+    white-space: nowrap;
     transform: rotate(-90deg) translate(50%, 200%);
     width: 68px;
     height: 17.05px;
@@ -64,6 +65,23 @@
   }
 }
 
-@media (min-width: 375px) {
+@media (max-width: 500px) {
+  .info {
+    &__occ {
+      display: none;
+    }
 
+    &__lang {
+      position: absolute;
+      top: 636px;
+      right: 30px;
+      font-size: 34px;
+      transform: rotate(90deg);
+      z-index: 100;
+    }
+
+    &__lang * {
+      font-size: inherit;
+    }
+  }
 }
