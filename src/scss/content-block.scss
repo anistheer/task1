@@ -16,7 +16,7 @@
 
     &_aboutme {
       background-color: $color-3;
-      height: 506px;
+      height: 500px;
     }
 
     &_portfolio {
@@ -34,13 +34,13 @@
     margin-top: 110px;
 
     &_skills {
-      margin-top: 83px;
-      margin-bottom: 60px;
+      margin-top: 87px;
+      margin-bottom: 57px;
     }
 
     &_portfolio {
       margin-top: 105px;
-      margin-bottom: 50px;
+      margin-bottom: 55px;
     }
 
     &_contacts {
@@ -50,9 +50,33 @@
   }
 
   &__text {
+    max-width: 485px;
     color: $color-1;
     font-size: 18px;
     line-height: 22px;
     text-align: center;
+  }
+}
+
+@media (max-width: 500px) {
+  .content-block {
+
+    &__body {
+      &_aboutme {
+        height: 495px;
+      }
+    }
+    &__title {
+      margin-top: 75px;
+      margin-bottom: 35px;
+
+      &_portfolio {
+        margin-bottom: 75px;
+      }
+    }
+
+    &__text {
+      max-width: 316px;
+    }
   }
 }

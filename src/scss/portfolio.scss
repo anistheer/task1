@@ -28,3 +28,15 @@
     text-decoration-line: underline;
   }
 }
+
+@media (max-width: 500px) {
+  .portfolio {
+    &__title {
+      margin: 25px 0;
+    }
+
+    &__item {
+      margin-bottom: 60px;
+    }
+  }
+}

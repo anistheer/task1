@@ -83,3 +83,17 @@
     flex-direction: column;
   }
 }
+
+@media(max-width: 500px) {
+  .skills {
+    margin-top: 75px;
+    margin-bottom: 20px;
+  }
+
+  .skill {
+    &__body {
+      height: 207px;
+      margin-bottom: 80px;
+    }
+  }
+}

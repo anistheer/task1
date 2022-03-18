@@ -20,9 +20,17 @@ body {
   min-width: $minWidth;
 }
 
+.overflow-hidden {
+  overflow: hidden;
+}
+
 ul {
   padding-inline-start: 0px;
   list-style: none;
+}
+
+.hidden {
+  display: none;
 }
 
 a {
