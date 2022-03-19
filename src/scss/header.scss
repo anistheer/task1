@@ -144,3 +144,17 @@
     }  
   }
 }
+
+@media (min-width: 501px) {
+  .menu {
+    display: flex !important;
+  }
+
+  .lang {
+    display: block !important;
+  };
+
+  body {
+    overflow: auto !important;
+  }
+}

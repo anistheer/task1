@@ -4,23 +4,22 @@ const lang = document.querySelector('.lang');
 const body = document.body;
 
 header__burger.addEventListener('click', () => {
-  switchElementClass(header__burger, 'header__burger_active');
+  toggleElementClass(header__burger, 'header__burger_active');
   toggleMenuVisible()
-  switchElementClass(body, 'overflow-hidden')
+  toggleElementClass(body, 'overflow-hidden')
 });
 
-function switchElementClass(element, className) {
+function toggleElementClass(element, className) {
   if (element.classList.contains(className)) {
     element.classList.remove(className)
   } else element.classList.add(className)
 }
 
 function toggleMenuVisible() {
-  switchElementClass(menu, 'hidden');
-  switchElementClass(lang, 'hidden');
+  toggleElementClass(menu, 'hidden');
+  toggleElementClass(lang, 'hidden');
 }
 
 if(window.innerWidth < 500) {
   toggleMenuVisible()
 }
-
