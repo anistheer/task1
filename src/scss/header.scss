@@ -1,4 +1,4 @@
-@import "./variables.scss";
+@import './variables.scss';
 
 .header {
   z-index: 50;
@@ -33,7 +33,7 @@
     top: 88px;
     height: 1px;
     max-width: $maxWidthCont;
-    border-bottom:1px solid rgb(0, 0, 0);
+    border-bottom: 1px solid rgb(0, 0, 0);
   }
 }
 
@@ -58,59 +58,59 @@
       left: 0;
     }
 
-  &__burger {
-    display: block;
-    position: absolute;
-    top: 67px;
-    right: 30px;
-    width: 33px;
-    height: 20px;
-    transition: 0.5s;
-
-    &:before, &:after {
-      content: '';
-      background-color: $color-1;
+    &__burger {
+      display: block;
       position: absolute;
-      width: 100%;
-      left: 0;
-      height: 4px;
-      transition: inherit;
-    }
+      top: 67px;
+      right: 30px;
+      width: 33px;
+      height: 20px;
+      transition: 0.5s;
 
-    &::before {
-      top: 0;
-    }
-
-    &::after {
-      bottom: 0;
-    }
-
-    & span {
-      position: absolute;
-      opacity: 1;
-      background-color: $color-1;
-      left: 0;
-      width: 100%;
-      height: 4px;
-      top: 8px;
-      transition: inherit;
-    }
-
-    &_active {
-      & span {
-        opacity: 0;
+      &:before,
+      &:after {
+        content: '';
+        background-color: $color-1;
+        position: absolute;
+        width: 100%;
+        left: 0;
+        height: 4px;
+        transition: inherit;
       }
 
       &::before {
-        transform: translateY(7.5px) rotate(45deg);
+        top: 0;
       }
 
       &::after {
-        transform: translateY(-7.5px) rotate(-45deg);
+        bottom: 0;
+      }
+
+      & span {
+        position: absolute;
+        opacity: 1;
+        background-color: $color-1;
+        left: 0;
+        width: 100%;
+        height: 4px;
+        top: 8px;
+        transition: inherit;
+      }
+
+      &_active {
+        & span {
+          opacity: 0;
+        }
+
+        &::before {
+          transform: translateY(7.5px) rotate(45deg);
+        }
+
+        &::after {
+          transform: translateY(-7.5px) rotate(-45deg);
+        }
       }
     }
-  }
-
 
     &__menu {
       display: block;
@@ -126,7 +126,7 @@
         height: 93px;
       }
     }
-    
+
     &:before {
       display: none;
     }
@@ -141,7 +141,7 @@
       text-align: left;
       display: flex;
       align-items: center;
-    }  
+    }
   }
 }
 
@@ -152,7 +152,7 @@
 
   .lang {
     display: block !important;
-  };
+  }
 
   body {
     overflow: auto !important;

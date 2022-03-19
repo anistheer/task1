@@ -15,7 +15,7 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  
+
   &__body {
     height: 207px;
     width: 167px;
@@ -84,7 +84,7 @@
   }
 }
 
-@media(max-width: 500px) {
+@media (max-width: 500px) {
   .skills {
     margin-top: 75px;
     margin-bottom: 20px;

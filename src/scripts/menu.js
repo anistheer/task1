@@ -5,14 +5,14 @@ const body = document.body;
 
 header__burger.addEventListener('click', () => {
   toggleElementClass(header__burger, 'header__burger_active');
-  toggleMenuVisible()
-  toggleElementClass(body, 'overflow-hidden')
+  toggleMenuVisible();
+  toggleElementClass(body, 'overflow-hidden');
 });
 
 function toggleElementClass(element, className) {
   if (element.classList.contains(className)) {
-    element.classList.remove(className)
-  } else element.classList.add(className)
+    element.classList.remove(className);
+  } else element.classList.add(className);
 }
 
 function toggleMenuVisible() {
@@ -20,6 +20,6 @@ function toggleMenuVisible() {
   toggleElementClass(lang, 'hidden');
 }
 
-if(window.innerWidth < 500) {
-  toggleMenuVisible()
+if (window.innerWidth < 500) {
+  toggleMenuVisible();
 }
