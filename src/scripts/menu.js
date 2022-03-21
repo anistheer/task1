@@ -7,7 +7,6 @@ const body = document.body;
 
 const mobileBreakpoint = 500;
 const resizes = [ window.innerWidth, window.innerWidth ];
-console.log(resizes);
 
 let firstResize = false;
 
@@ -21,7 +20,6 @@ const onResize = debounce(() => {
   if (!firstResize) firstResize=true; hideMenu()
   resizes.push(window.innerWidth)  
   resizes.shift();  
-  console.log('resize', resizes, innerWidth)
   if ( resizes[0] > mobileBreakpoint && window.innerWidth < mobileBreakpoint) {
     hideMenu()
   }
@@ -41,7 +39,6 @@ function toggleMenuVisible() {
 }
 
 function hideMenu() {
-  console.log('hide');
   header__burger.classList.remove( 'header__burger_active');
   menu.classList.add('hidden')
   lang.classList.add('hidden')
