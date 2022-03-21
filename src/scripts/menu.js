@@ -43,5 +43,6 @@ function hideMenu() {
 }
 
 if (window.innerWidth < 500) {
-  hideMenu()
+  toggleMenuVisible();
+  hideMenu();
 }
