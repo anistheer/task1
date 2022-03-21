@@ -6,7 +6,10 @@ const lang = document.querySelector('.lang');
 const body = document.body;
 
 const mobileBreakpoint = 500;
-const resizes = [];
+const resizes = [ window.innerWidth, window.innerWidth ];
+console.log(resizes);
+
+let firstResize = false;
 
 header__burger.addEventListener('click', () => {
   toggleElementClass(header__burger, 'header__burger_active');
@@ -15,12 +18,14 @@ header__burger.addEventListener('click', () => {
 });
 
 const onResize = debounce(() => {
+  if (!firstResize) firstResize=true; hideMenu()
   resizes.push(window.innerWidth)  
-  if (resizes.length > 2) resizes.shift();
-  if (resizes[0] > mobileBreakpoint && resizes[1] < mobileBreakpoint) {
+  resizes.shift();  
+  console.log('resize', resizes, innerWidth)
+  if ( resizes[0] > mobileBreakpoint && window.innerWidth < mobileBreakpoint) {
     hideMenu()
   }
-}, 200)
+}, 50)
 
 window.addEventListener('resize', onResize)
 
@@ -36,13 +41,16 @@ function toggleMenuVisible() {
 }
 
 function hideMenu() {
+  console.log('hide');
   header__burger.classList.remove( 'header__burger_active');
   menu.classList.add('hidden')
   lang.classList.add('hidden')
   body.classList.remove('overflow-hidden')
 }
 
-if (window.innerWidth < 500) {
-  toggleMenuVisible();
-  hideMenu();
-}
+window.addEventListener('load', () => {
+  if (window.innerWidth < 500) {
+    hideMenu();
+  }
+})
+
