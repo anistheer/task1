@@ -68,6 +68,8 @@
 
 @media (max-width: 500px) {
   .present {
+    margin-bottom: 80px;
+
     &__info {
       height: 195px;
       margin-top: 55px;
@@ -87,8 +89,8 @@
 
     &__lang {
       position: absolute;
-      bottom: 139px;
-      right: 30px;
+      bottom: 160px;
+      right: 20px;
       font-size: 34px;
       transform: rotate(90deg);
       z-index: 100;

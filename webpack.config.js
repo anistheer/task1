@@ -1,7 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 const cleanOptions = {
   root: __dirname,
   verbose: true,
@@ -37,20 +37,16 @@ module.exports = {
             loader: 'postcss-loader',
             options: {
               postcssOptions: {
-                plugins: [
-                  [
-                    'postcss-preset-env',
-                    {
-                      // Options
-                    },
-                  ],
-                ],
+                plugins: [['postcss-preset-env', {}]],
               },
             },
           },
         ],
       },
-      {test: /\.(js)$/, use: 'babel-loader'},
+      {
+        test: /\.(js)$/,
+        use: 'babel-loader',
+      },
       {
         test: /\.(png|jpe?g|gif)$/i,
         loader: 'file-loader',
@@ -58,18 +54,6 @@ module.exports = {
           name: '[path][name].[ext]',
         },
       },
-      // {
-      //   test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
-      //   use: [
-      //     {
-      //       loader: 'file-loader',
-      //       options: {
-      //         name: '[name].[ext]',
-      //         outputPath: 'fonts/'
-      //       }
-      //     }
-      //   ]
-      // }
     ],
   },
   output: {
