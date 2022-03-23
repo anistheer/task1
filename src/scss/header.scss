@@ -2,13 +2,18 @@
 
 .header {
   z-index: 50;
+  position: fixed;
+  top: 0;
+  display: block;
+  background-color: white;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
 
   &__container {
     height: 88px;
     width: 100%;
     max-width: $maxWidthCont + 60px;
-    margin: 0 auto;
-    padding: 0 29px;
+    padding: 0 40px;
     box-sizing: border-box;
   }
 
@@ -44,6 +49,7 @@
     font-size: 18px;
     position: relative;
     bottom: 5px;
+    cursor: pointer;
 
     &_active {
       color: $color-1;
@@ -54,6 +60,7 @@
 @media (max-width: 500px) {
   .header {
     &__container {
+      height: 0px;
       padding: 0;
       position: absolute;
       top: 0;

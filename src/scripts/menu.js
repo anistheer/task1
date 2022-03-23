@@ -20,7 +20,7 @@ const onResize = debounce(() => {
   if (!firstResize) firstResize=true; hideMenu()
   resizes.push(window.innerWidth)  
   resizes.shift();  
-  if ( resizes[0] > mobileBreakpoint && window.innerWidth < mobileBreakpoint) {
+  if ( resizes[0] > mobileBreakpoint && resizes[1] < mobileBreakpoint) {
     hideMenu()
   }
 }, 50)
@@ -38,7 +38,7 @@ function toggleMenuVisible() {
   toggleElementClass(lang, 'hidden');
 }
 
-function hideMenu() {
+export function hideMenu() {
   header__burger.classList.remove( 'header__burger_active');
   menu.classList.add('hidden')
   lang.classList.add('hidden')
