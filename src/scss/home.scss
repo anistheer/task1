@@ -27,8 +27,8 @@
   margin: 30px 0 44px 0;
 
   &__name {
-    font-size: 47.3392px;
-    width: 123.51px;
+    font-size: 47px;
+    width: 124px;
     overflow-wrap: normal;
     font-weight: 700;
     line-height: 59px;
@@ -46,7 +46,7 @@
     white-space: nowrap;
     transform: rotate(-90deg) translate(50%, 200%);
     width: 68px;
-    height: 17.05px;
+    height: 17px;
     line-height: 0px;
   }
 }
@@ -67,7 +67,7 @@
   }
 }
 
-@media (max-width: 500px) {
+@media (max-width: $MOBILE_BREAKPOINT) {
   .home {
     margin-top: 0px;
     margin-bottom: 80px;

@@ -8,7 +8,7 @@
 
   &__send-button {
     height: 42px;
-    width: 180.5px;
+    width: 181px;
     font-size: 18px;
     border-radius: 21px;
     border: 0px;
@@ -57,7 +57,7 @@
   }
 }
 
-@media (max-width: 500px) {
+@media (max-width: $MOBILE_BREAKPOINT) {
   .footer {
     &__send-button {
       width: 100%;

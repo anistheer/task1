@@ -58,7 +58,7 @@
   }
 }
 
-@media (max-width: 500px) {
+@media (max-width: $MOBILE_BREAKPOINT) {
   .content-block {
     &__body {
       &_aboutme {

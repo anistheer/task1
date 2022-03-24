@@ -29,7 +29,7 @@
   }
 }
 
-@media (max-width: 500px) {
+@media (max-width: $MOBILE_BREAKPOINT) {
   .portfolio {
     &__title {
       margin: 25px 0;

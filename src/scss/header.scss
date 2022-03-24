@@ -57,7 +57,7 @@
   }
 }
 
-@media (max-width: 500px) {
+@media (max-width: $MOBILE_BREAKPOINT) {
   .header {
     &__container {
       height: 0px;
@@ -155,7 +155,7 @@
   }
 }
 
-@media (min-width: 501px) {
+@media (min-width: ($MOBILE_BREAKPOINT + 1)) {
   .menu {
     display: flex !important;
   }

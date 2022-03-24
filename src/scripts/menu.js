@@ -1,14 +1,29 @@
 import { debounce } from "./debounce";
+import { MOBILE_BREAKPOINT } from "./variables";
 
 const header__burger = document.querySelector('.header__burger');
 const menu = document.querySelector('.menu');
 const lang = document.querySelector('.lang');
 const body = document.body;
 
-const mobileBreakpoint = 500;
 const resizes = [ window.innerWidth, window.innerWidth ];
 
 let firstResize = false;
+
+const onResize = debounce(() => {
+  if (!firstResize) {
+    firstResize=true;
+    hideMenu();
+  }
+  resizes.push(window.innerWidth)  
+  resizes.shift();  
+  if ( resizes[0] > MOBILE_BREAKPOINT && resizes[1] < MOBILE_BREAKPOINT) {
+    hideMenu();
+  }
+}, 50)
+
+
+window.addEventListener('resize', onResize)
 
 header__burger.addEventListener('click', () => {
   toggleElementClass(header__burger, 'header__burger_active');
@@ -16,27 +31,11 @@ header__burger.addEventListener('click', () => {
   toggleElementClass(body, 'overflow-hidden');
 });
 
-const onResize = debounce(() => {
-  if (!firstResize) firstResize=true; hideMenu()
-  resizes.push(window.innerWidth)  
-  resizes.shift();  
-  if ( resizes[0] > mobileBreakpoint && resizes[1] < mobileBreakpoint) {
-    hideMenu()
+window.addEventListener('load', () => {
+  if (window.innerWidth < MOBILE_BREAKPOINT) {
+    hideMenu();
   }
-}, 50)
-
-window.addEventListener('resize', onResize)
-
-function toggleElementClass(element, className) {
-  if (element.classList.contains(className)) {
-    element.classList.remove(className);
-  } else element.classList.add(className);
-}
-
-function toggleMenuVisible() {
-  toggleElementClass(menu, 'hidden');
-  toggleElementClass(lang, 'hidden');
-}
+})
 
 export function hideMenu() {
   header__burger.classList.remove( 'header__burger_active');
@@ -45,9 +44,13 @@ export function hideMenu() {
   body.classList.remove('overflow-hidden')
 }
 
-window.addEventListener('load', () => {
-  if (window.innerWidth < 500) {
-    hideMenu();
-  }
-})
+function toggleMenuVisible() {
+  toggleElementClass(menu, 'hidden');
+  toggleElementClass(lang, 'hidden');
+}
 
+function toggleElementClass(element, className) {
+  if (element.classList.contains(className)) {
+    element.classList.remove(className);
+  } else element.classList.add(className);
+}
