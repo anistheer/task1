@@ -22,10 +22,6 @@ body {
   flex-direction: column;
 }
 
-.overflow-hidden {
-  overflow: hidden;
-}
-
 ul {
   padding-inline-start: 0px;
   list-style: none;
@@ -33,4 +29,12 @@ ul {
 
 a {
   text-decoration: none;
+}
+
+@media (max-width: $MOBILE_BREAKPOINT) {
+  body {
+    &.overflow-hidden {
+      overflow: hidden;
+    }
+  }
 }
