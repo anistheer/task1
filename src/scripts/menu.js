@@ -17,7 +17,7 @@ const onResize = debounce(() => {
   }
   resizes.push(window.innerWidth)  
   resizes.shift();  
-  if ( resizes[0] > MOBILE_BREAKPOINT && resizes[1] < MOBILE_BREAKPOINT) {
+  if ( resizes[0] < MOBILE_BREAKPOINT && resizes[1] > MOBILE_BREAKPOINT) {
     hideMenu();
   }
 }, 50)
@@ -39,14 +39,14 @@ window.addEventListener('load', () => {
 
 export function hideMenu() {
   header__burger.classList.remove( 'header__burger_active');
-  menu.classList.add('hidden')
-  lang.classList.add('hidden')
+  menu.classList.add('header__menu_hidden')
+  lang.classList.add('info__lang_hidden')
   body.classList.remove('overflow-hidden')
 }
 
 function toggleMenuVisible() {
-  toggleElementClass(menu, 'hidden');
-  toggleElementClass(lang, 'hidden');
+  toggleElementClass(menu, 'header__menu_hidden');
+  toggleElementClass(lang, 'info__lang_hidden');
 }
 
 function toggleElementClass(element, className) {

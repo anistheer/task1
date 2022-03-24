@@ -96,6 +96,10 @@
       font-size: 34px;
       transform: rotate(90deg);
       z-index: 100;
+
+      &_hidden {
+        display: none;
+      }
     }
 
     &__lang * {
